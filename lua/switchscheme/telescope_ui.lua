@@ -13,6 +13,7 @@ function M.colorscheme_picker()
 		prompt_title = "Select Colorscheme",
 		finder = finders.new_table({ results = colors }),
 		sorter = conf.generic_sorter({}),
+		layout_config = { width = 0.4, height = 0.4 },     -- ⬅ Smaller and cleaner UI
 		attach_mappings = function(prompt_bufnr, map)
 			local function apply_colorscheme()
 				local selection = action_state.get_selected_entry()
