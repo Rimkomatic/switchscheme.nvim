@@ -72,7 +72,4 @@ PRs are welcome! To contribute:
 
 ---
 
-## 📜 License  
-MIT License.  
-
 🌟 Enjoy effortless theme switching in Neovim!
