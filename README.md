@@ -57,8 +57,14 @@ To customize `switchscheme.nvim`, use:
 require("switchscheme").setup({
     preview = true,  -- Enable live preview
     layout = { width = 0.4, height = 0.4 },  -- Floating window size
+    persist = true, -- Save selected theme and restore it at startup
 })
 ```
+
+`persist` defaults to `false`. To restore the saved theme at startup, make sure
+the plugin's `setup()` runs during startup (for example, set `lazy = false` in
+the Lazy.nvim plugin spec). If the plugin is loaded only by its command, the
+theme will not be restored until that command loads the plugin.
 
 ---
 
