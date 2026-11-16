@@ -3,6 +3,7 @@ local action_state = require("telescope.actions.state")
 local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
 local conf = require("telescope.config").values
+local persistence = require("switchscheme.persistence")
 
 local M = {}
 
@@ -19,6 +20,7 @@ function M.colorscheme_picker()
 				local selection = action_state.get_selected_entry()
 				if selection then
 					vim.cmd("colorscheme " .. selection[1])
+					persistence.save(selection[1])
 					vim.api.nvim_set_hl(0, "LineNr", { fg = "#ffffff" }) 
 					vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffffff", bold = true }) 
 				end
